@@ -31,7 +31,7 @@ define gui.accent_color = '#0099ff'
 
 ## La couleur utilisée pour le texte d’un bouton quand il n’a jamais été
 ## sélectionné ou survolé.
-define gui.idle_color = '#707070'
+define gui.idle_color = '#000000'
 
 ## La petite couleur est utilisé pour les textes courts qui nécessitent d’être
 ## assombris ou éclairés pour obtenir le même effet.
@@ -107,7 +107,7 @@ define gui.textbox_height = 278
 
 ## L’emplacement vertical de la zone de texte à l’écran. 0.0 pour le haut, 0.5
 ## pour le centre et 1.0 pour le bas.
-define gui.textbox_yalign = 1.0
+define gui.textbox_yalign = 1.1
 
 
 ## L’emplacement relatif à la zone de texte du nom du personnage en train de

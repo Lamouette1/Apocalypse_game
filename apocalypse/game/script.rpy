@@ -104,7 +104,7 @@ label start:
                                         "Me" "Thanks to you, Sylvie, the future looks brighter than ever. Your decisions have saved countless lives."
                                         
                                         "2 years later..."
-                                        play music "mysterious.mp3" volume 0.2
+                                        play music "Beauty.mp3" volume 0.2
                                         scene final
                                         "Thank you for playing! Your choices have shaped a better future. The world is now sustainable and thriving."
                                         return
