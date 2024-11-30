@@ -10,7 +10,7 @@ image expansion = "expansion.png"
 image decentralized = "decentralized_energy.png"
 image fossil = "fossil_fuels.png"
 image renewable = "renewable_energy.png"
-
+image final = "final.png"
 # Le jeu commence ici
 
 label start:
@@ -82,7 +82,6 @@ label start:
                                 menu:
                                     "Invest in renewable energy sources":
                                         scene renewable
-                                        play music "mysterious.mp3" volume 0.2
                                         play sound "loseVoice.mp3" volume 1.0
                                         "Me" "Oh no! While renewable energy was a step forward, the infrastructure wasn’t inclusive. Wealth inequality grew, leading to unrest."
                                         "Sylvie" "I didn’t think about the socio-economic impacts. I’ll try something different."
@@ -91,7 +90,6 @@ label start:
 
                                     "Tap into fossil fuels for immediate relief":
                                         scene fossil
-                                        play music "mysterious.mp3" volume 0.2
                                         play sound "loseVoice.mp3" volume 1.0
                                         "Me" "Oh no! Fossil fuels provided temporary relief, but pollution has spiraled out of control, causing severe health problems."
                                         "Sylvie" "Short-term solutions never seem to work out. We need a better plan."
@@ -104,11 +102,15 @@ label start:
                                         "Me" "This is perfect! Decentralized energy systems have empowered communities and made them self-reliant."
                                         "Sylvie" "That’s amazing! The people are now more independent, and the environment is recovering too."
                                         "Me" "Thanks to you, Sylvie, the future looks brighter than ever. Your decisions have saved countless lives."
+                                        
+                                        "2 years later..."
+                                        play music "mysterious.mp3" volume 0.2
+                                        scene final
+                                        "Thank you for playing! Your choices have shaped a better future. The world is now sustainable and thriving."
                                         return
 
                         "Support expansion into new territories":
                             scene expansion
-                            play music "mysterious.mp3" volume 0.2
                             play sound "loseVoice.mp3" volume 1.0
                             "Me" "Oh no! Expanding into uncharted territories disrupted ecosystems and polluted water sources."
                             "Sylvie" "I didn’t realize the consequences would be so devastating. Let’s rethink this."
@@ -117,7 +119,6 @@ label start:
 
                         "Rationing and austerity measures":
                             scene rationing
-                            play music "mysterious.mp3" volume 0.2
                             play sound "loseVoice.mp3" volume 1.0
                             "Me" "Oh no! Rationing created widespread dissatisfaction, and the lack of resources led to contamination."
                             "Sylvie" "This doesn’t seem to be the right solution. Let’s try something else."
