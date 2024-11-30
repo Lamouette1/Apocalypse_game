@@ -11,6 +11,8 @@ image chemical = "chemical_world.png"
 image boiling = "boiling_world.png"
 image filtration = "filtration_world.png"
 image council = "council.png"
+image rationing = "rationing_austerity.png"
+image expansion = "expansion.png"
 # Le jeu commence ici
 
 label start:
@@ -68,19 +70,28 @@ label start:
 
                         "Me" "I need you to"
 
-                        menu:
+                        label main2:
+                            menu:
 
-                            "Promote fair distribution through councils":
-                                scene council
-                                play sound "successVoice.mp3"
-                                "Me" "Yes it worked! The council has been established and the water is now distributed fairly."
-                                return
+                                "Promote fair distribution through councils":
+                                    scene council
+                                    play sound "successVoice.mp3"
+                                    "Me" "Yes it worked! The council has been established and the water is now distributed fairly."
+                                    return
 
-                            "Support expansion into new territories":
-                                return
-                                scene base
-                                play sound "loseVoice.mp3"
-                                "Me" "Oh no! The expansion has caused the water to be contaminated."
+                                "Support expansion into new territories":
+                                    scene expansion
+                                    play sound "loseVoice.mp3"
+                                    "Me" "Oh no! The expansion has caused the water to be contaminated."
+                                    scene filtration
+                                    jump main2
+
+                                "Rationing and austerity measures":
+                                    scene rationing
+                                    play sound "loseVoice.mp3"
+                                    "Me" "Oh no! The rationing has caused the water to be contaminated."
+                                    scene filtration
+                                    jump main2
 
                         return
 
