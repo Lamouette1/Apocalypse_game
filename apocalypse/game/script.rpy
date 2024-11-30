@@ -10,7 +10,7 @@ image base = "base_world.png"
 image chemical = "chemical_world.png"
 image boiling = "boiling_world.png"
 image filtration = "filtration_world.png"
-
+image council = "council.png"
 # Le jeu commence ici
 
 label start:
@@ -21,33 +21,68 @@ label start:
         "Commencer":
             "Me" "Hello? Is anyone there?"
 
-            "?" "Hello! Who is this?"
+            "?" "Hello! Who is this? I'm Sylvie."
 
             "Me" "I'm John. I'm from the future. I need your help."
 
-            "?" "What do you need help with?"
+            "Sylvie" "What do you need help with?"
 
             "Me" "I need you to change the past in order for the future to have celan water, we are dying here."
 
-            "?" "I'm sorry, I don't understand."
+            "Sylvie" "I'm sorry, I don't understand."
 
             "Me" "I'll tell you what to do."
 
-            menu:
-                "Boil the water.":
-                    scene boiling
-                    "Me" "Oh no! It seems they're is no more trees anymore!."
-                    return
+            label main:
+                menu:
+                    "Boil the water.":
+                        scene boiling
+                        play sound "loseVoice.mp3"
+                        "Me" "Oh no! It seems they're is no more trees anymore! The excessive use of wood depletes forest resources, leading to fewer trees."
+                        "You Lost"
+                        scene base
+                        jump main
 
-                "Use a chemical purifier.":
-                    scene chemical
-                    "el" "Oh no! There are mutants now."
-                    return
+                    "Use a chemical purifier.":
+                        scene chemical
+                        play sound "loseVoice.mp3"
+                        "el" "Oh no! There are mutants now. The long-term exposure to the chemicals mutated the population."
+                        "You Lost"
+                        scene base
+                        jump main
 
-                "Build a filtration system.":
-                    scene filtration
-                    "Me" "Everything seems to be working fine now."
-                    return
+                    "Build a filtration system.":
+                        scene filtration
+                        play sound "successVoice.mp3"
+                        "Me" "Everything seems to be working fine now."
+                        
+                        "Sylvie" "I'm glad I could help. I hope the future is better now."
+
+                        "Me" "For now, it is. Thank you for your help."
+
+                        "2 month later"
+
+                        "Me" "Hello Sylvie, I need your help again."
+
+                        "Sylvie" "What do you need help with?"
+
+                        "Me" "I need you to"
+
+                        menu:
+
+                            "Promote fair distribution through councils":
+                                scene council
+                                play sound "successVoice.mp3"
+                                "Me" "Yes it worked! The council has been established and the water is now distributed fairly."
+                                return
+
+                            "Support expansion into new territories":
+                                return
+                                scene base
+                                play sound "loseVoice.mp3"
+                                "Me" "Oh no! The expansion has caused the water to be contaminated."
+
+                        return
 
         "Quitter":
             return
